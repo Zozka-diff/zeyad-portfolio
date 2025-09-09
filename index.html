@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zeyad Ashraf — Creative Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#1f1a1d;         
+      --panel:#272225;      
+      --text:#f0ece4;       
+      --muted:#cfc7bf;      
+      --accent:#e8ddc7;     
+      --stroke:#3a3337;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);}    
+    body{font-family:Manrope,system-ui,Segoe UI,Roboto,Helvetica,Arial; line-height:1.6}
+
+    .wrap{max-width:1200px;margin:0 auto;padding:28px}
+    .hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:36px;align-items:center}
+
+    .eyebrow{letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-size:12px}
+    .title{font-family:"Playfair Display",serif;font-size:64px;line-height:1.05;margin:10px 0 10px}
+    .subtitle{font-size:18px;color:var(--muted);max-width:640px}
+
+    .buttons{display:flex;gap:12px;margin-top:22px}
+    .btn{appearance:none;border:1px solid var(--accent);background:transparent;color:var(--accent);padding:10px 16px;border-radius:999px;font-weight:700;text-decoration:none}
+    .btn.filled{background:var(--accent);color:#241f22}
+
+    /* Photo frame — clean arched shape */
+    .photo-arch{position:relative;background:var(--panel);border-radius:24px;padding:18px;border:1px solid var(--stroke)}
+    .photo-arch .inner{
+      position:relative;
+      height:520px;
+      overflow:hidden;
+      border-top-left-radius:220px;
+      border-top-right-radius:220px;
+      border-bottom-left-radius:22px;
+      border-bottom-right-radius:22px;
+    }
+    .photo-arch .inner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    section{margin-top:64px}
+    .section-title{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 18px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;overflow:hidden}
+    .card .thumb{height:180px;background:#3b3438}
+    .card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .card .body{padding:16px}
+    .meta{font-size:12px;color:var(--muted)}
+
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .about .panel{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:18px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .chip{border:1px solid var(--stroke);background:transparent;color:var(--muted);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
+
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .contact .panel{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:18px}
+    input,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--stroke);background:#1a1618;color:var(--text)}
+    label{font-size:12px;color:var(--muted)}
+
+    /* Contact info styling */
+    .contact-info {
+      margin-top: 10px;
+      padding: 12px;
+      background: #1a1618;
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      color: var(--text);
+      font-family: inherit;
+      cursor: text;
+      user-select: all;
+    }
+
+    footer{margin:56px 0 16px;color:var(--muted);text-align:center;font-size:13px}
+
+    @media (max-width:1024px){
+      .hero{grid-template-columns:1fr}
+      .photo-arch .inner{height:420px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .about{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .title{font-size:48px}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .title{font-size:38px}
+    }
+
+    /* Thank You section */
+#thankyou {
+  margin-top: 80px;
+}
+.thankyou-panel {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: 20px;
+  padding: 50px 30px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+.thankyou-panel h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: var(--accent);
+}
+.thankyou-panel p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 650px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- HERO -->
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Creative Portfolio</div>
+        <h1 class="title">ZEYAD<br>ASHRAF</h1>
+        <p class="subtitle">FPGA / Verilog & SystemVerilog RTL designer and UVM verification engineer. I turn specifications into synthesizable RTL and verification environments with clear waveforms, coverage and reports.</p>
+        <div class="buttons">
+          <a class="btn filled" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="photo-arch">
+        <div class="inner">
+          <img src="WhatsApp Image 2025-06-29 at 18.55.04_0f8de95b.jpg" alt="Portrait / cover"/>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="about">
+        <div class="panel">
+          <p>I'm a 4th-year Electronics & Electrical Communication student focused on digital design and verification. I design RTL in Verilog/SystemVerilog, build UVM environments, and provide clean documentation (README, coverage, synthesis reports). Comfortable with QuestaSim/Vivado flows and MATLAB signal processing, with knowledge of SW testing whether manual or automation.</p>
+        </div>
+        <div class="panel">
+          <strong>Skills & Tools</strong>
+          <div class="chips">
+            <span class="chip">Verilog</span>
+            <span class="chip">SystemVerilog</span>
+            <span class="chip">UVM</span>
+            <span class="chip">QuestaSim (ModelSim)</span>
+            <span class="chip">Vivado / ISE</span>
+            <span class="chip">MATLAB</span>
+            <span class="chip">FPGA Synthesis</span>
+            <span class="chip">Timing Closure</span>
+            <span class="chip">RISC‑V (basic)</span>
+            <span class="chip">Java</span>
+            <span class="chip">SW Testing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="about">
+        <!-- Degree -->
+        <div class="panel">
+          <strong>B.Sc. in Electronics & Electrical Communication</strong>
+          <p>Faculty of Engineering, Cairo University</p>
+          <p class="meta">2021 – Present</p>
+          <p>Focus on Digital Design, RTL (Verilog/SystemVerilog), FPGA Synthesis, and Verification methodologies (UVM).</p>
+        </div>
+
+        <!-- Certifications -->
+        <div class="panel">
+          <strong>Certifications & Training</strong>
+          <ul style="margin:8px 0 0; padding-left:18px">
+            <li>Diploma: Digital Design using Verilog & FPGA Flow (Vivado)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Selected Projects</h2>
+      <div class="grid">
+        <!-- CARD 1 -->
+        <article class="card">
+          <div class="thumb"><img src="Screenshot 2025-09-09 171214.png" alt="FPGA"/></div>
+          <div class="body">
+            <h3>DSP on Spartan‑6 (DSP48A1)</h3>
+            <div class="meta">Verilog • Xilinx ISE • ModelSim</div>
+            <p>Implemented high‑performance DSP pipelines using DSP48A1 slices, focused on timing closure and resource efficiency. Delivered synthesizable RTL, TBs, and synthesis reports.</p>
+          </div>
+        </article>
+        <!-- CARD 2 -->
+        <article class="card">
+          <div class="thumb"><img src="Screenshot 2025-09-09 171625.png" alt="SPI"/></div>
+          <div class="body">
+            <h3>SPI Slave + Single‑Port RAM</h3>
+            <div class="meta">Verilog • Memory IF • Simulation</div>
+            <p>Designed and verified an SPI slave bridging to single‑port RAM with complete read/write coverage and corner‑case vectors.</p>
+          </div>
+        </article>
+        <!-- CARD 3 -->
+        <article class="card">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop" alt="UVM"/></div>
+          <div class="body">
+            <h3>ALSU UVM Verification</h3>
+            <div class="meta">SystemVerilog • UVM • Coverage</div>
+            <p>Full UVM env (agents, scoreboard, sequences, coverage) verifying arithmetic, logic, shifts and rotates with assertions.</p>
+          </div>
+        </article>
+        <!-- CARD 4 -->
+        <article class="card">
+          <div class="thumb"><img src="https://www.boxhero.io/en/blog/content/images/size/w1200/2024/08/iStock-2158642953.jpg" alt="FIFO"/></div>
+          <div class="body">
+            <h3>FIFO UVM Testbench</h3>
+            <div class="meta">SystemVerilog • Constrained‑Random</div>
+            <p>Stress‑tested under overflow/underflow and reset conditions with a scoreboard to ensure data integrity.</p>
+          </div>
+        </article>
+        <!-- CARD 5 -->
+        <article class="card">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop" alt="MATLAB"/></div>
+          <div class="body">
+            <h3>MATLAB Line‑Coding Analysis</h3>
+            <div class="meta">MATLAB • Autocorrelation</div>
+            <p>Compared theoretical, statistical and time‑domain autocorrelation for Unipolar NRZ, Polar NRZ and Polar RZ; summarized ergodicity and spectra.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact">
+        <div class="panel">
+          <p><strong>Let's work together.</strong> Send a short brief and I'll reply within a day.</p>
+          <form onsubmit="event.preventDefault(); const to='ziadashraf2056@gmail.com'; const s=encodeURIComponent('Project inquiry'); const b=encodeURIComponent(document.getElementById('msg').value); window.location.href=`mailto:${to}?subject=${s}&body=${b}`;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div>
+                <label>Your name</label>
+                <input placeholder="Client name" required>
+              </div>
+              <div>
+                <label>Your email</label>
+                <input placeholder="client@email.com" required>
+              </div>
+            </div>
+            <div style="margin-top:12px">
+              <label>Project brief</label>
+              <textarea id="msg" rows="5" placeholder="One‑two lines about your project"></textarea>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:16px">
+              <button class="btn filled" type="submit">Send Email</button>
+              <a class="btn" href="#">Upwork/Fiverr</a>
+            </div>
+          </form>
+        </div>
+        <div class="panel">
+          <label>My email</label>
+          <div class="contact-info">ziadashraf2056@gmail.com</div>
+          <label style="margin-top: 16px; display: block;">My Phone number</label>
+          <div class="contact-info">+201122023585</div>
+        </div>
+      </div>
+    </section>
+
+<!-- THANK YOU -->
+<section id="thankyou">
+  <div class="thankyou-panel">
+    <h2>Thank You</h2>
+    <p>
+      I appreciate you taking the time to explore my portfolio.  
+      If you're interested in collaborating or have a project in mind, let's connect!
+    </p>
+    <a class="btn filled" href="https://www.linkedin.com/in/zeyad-ashraf-a57123253/" target="_blank">
+    Connect on LinkedIn
+     </a>
+
+  </div>
+</section>
+
+
+    <footer>
+      © <span id="yr"></span> Zeyad Ashraf — FPGA & Verification
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
